@@ -20,4 +20,7 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "AndroidInstagramClone"
-include(":app")
+include(
+    ":app",
+    ":authorization",
+)

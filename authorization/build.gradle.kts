@@ -1,20 +1,16 @@
 plugins {
-    alias(libs.plugins.android.application)
+    id("com.android.library")
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.serialization)
 }
 
 android {
-    namespace = "com.williamtan1989.androidinstagramclone"
+    namespace = "com.williamtan1989.androidinstagramclone.authorization"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.williamtan1989.androidinstagramclone"
         minSdk = 26
-        targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -52,8 +48,6 @@ dependencies {
 
     implementation(libs.androidx.navigation.compose)
     implementation(libs.kotlinx.serialization.json)
-
-    implementation(project(":authorization"))
 
     testImplementation(libs.junit)
 
