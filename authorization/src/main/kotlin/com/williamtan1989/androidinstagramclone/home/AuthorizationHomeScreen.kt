@@ -19,7 +19,7 @@ fun AuthorizationHomeScreen(
             modifier = Modifier.padding(innerPadding)
         ) {
             Column {
-                Text("SnapGram")
+                Text("Snapvent")
             }
         }
     }
