@@ -44,28 +44,28 @@ class AndroidLibraryPlugin : Plugin<Project> {
         commonExtension.resourcePrefix = path.split("""\W""".toRegex()).drop(1).distinct().joinToString(separator = "_").lowercase() + "_"
 
         dependencies {
-            val composeBom = libs.findLibrary("androidx-compose-bom").get()
-
-            add("implementation", libs.findLibrary("androidx-core-ktx").get())
-            add("implementation", libs.findLibrary("androidx-lifecycle-runtime-ktx").get())
-            add("implementation", libs.findLibrary("androidx-activity-compose").get())
-            add("implementation", platform(composeBom))
-            add("implementation", libs.findLibrary("androidx-ui").get())
-            add("implementation", libs.findLibrary("androidx-ui-graphics").get())
-            add("implementation", libs.findLibrary("androidx-ui-tooling.preview").get())
-            add("implementation", libs.findLibrary("androidx-material3").get())
-            add("implementation", libs.findLibrary("androidx-navigation-compose").get())
-            add("implementation", libs.findLibrary("kotlinx.serialization-json").get())
-
-            add("testImplementation", libs.findLibrary("junit").get())
-
-            add("androidTestImplementation", libs.findLibrary("androidx-junit").get())
-            add("androidTestImplementation", libs.findLibrary("androidx-espresso-core").get())
-            add("androidTestImplementation", platform(composeBom))
-            add("androidTestImplementation", libs.findLibrary("androidx-ui-test-junit4").get())
-
-            add("debugImplementation", libs.findLibrary("androidx-ui-tooling").get())
-            add("debugImplementation", libs.findLibrary("androidx-ui-test-manifest").get())
+//            val composeBom = libs.findLibrary("androidx-compose-bom").get()
+//
+//            add("implementation", libs.findLibrary("androidx-core-ktx").get())
+//            add("implementation", libs.findLibrary("androidx-lifecycle-runtime-ktx").get())
+//            add("implementation", libs.findLibrary("androidx-activity-compose").get())
+//            add("implementation", platform(composeBom))
+//            add("implementation", libs.findLibrary("androidx-ui").get())
+//            add("implementation", libs.findLibrary("androidx-ui-graphics").get())
+//            add("implementation", libs.findLibrary("androidx-ui-tooling.preview").get())
+//            add("implementation", libs.findLibrary("androidx-material3").get())
+//            add("implementation", libs.findLibrary("androidx-navigation-compose").get())
+//            add("implementation", libs.findLibrary("kotlinx.serialization-json").get())
+//
+//            add("testImplementation", libs.findLibrary("junit").get())
+//
+//            add("androidTestImplementation", libs.findLibrary("androidx-junit").get())
+//            add("androidTestImplementation", libs.findLibrary("androidx-espresso-core").get())
+//            add("androidTestImplementation", platform(composeBom))
+//            add("androidTestImplementation", libs.findLibrary("androidx-ui-test-junit4").get())
+//
+//            add("debugImplementation", libs.findLibrary("androidx-ui-tooling").get())
+//            add("debugImplementation", libs.findLibrary("androidx-ui-test-manifest").get())
         }
     }
 }

@@ -53,9 +53,9 @@ tasks {
 
 gradlePlugin {
     plugins {
-//        register("androidLibrary") {
-//            id = "com.williamtan1989.androidinstagramclone.androidlibrary"
-//            implementationClass = "com.williamtan1989.androidinstagramclone.AndroidLibraryPlugin"
-//        }
+        register("androidLibrary") {
+            id = "com.williamtan1989.androidinstagramclone.androidlibrary"
+            implementationClass = "com.williamtan1989.androidinstagramclone.AndroidLibraryPlugin"
+        }
     }
 }
