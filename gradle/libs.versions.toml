@@ -48,4 +48,4 @@ kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "ko
 serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 
 # local plugin
-# android-library = { id = "com.williamtan1989.androidinstagramclone.androidlibrary", version = "unspecified" }
+android-library = { id = "com.williamtan1989.androidinstagramclone.androidlibrary", version = "unspecified" }
