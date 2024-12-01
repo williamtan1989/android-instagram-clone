@@ -4,8 +4,4 @@ plugins {
 
 android {
     namespace = "com.williamtan1989.androidinstagramclone.authorization"
-
-    kotlinOptions {
-        jvmTarget = "17"
-    }
 }
