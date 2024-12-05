@@ -7,12 +7,12 @@ plugins {
 
 android {
     namespace = "com.williamtan1989.androidinstagramclone"
-    compileSdk = 35
+    compileSdk = libs.versions.compileSdkVersion.get().toInt()
 
     defaultConfig {
         applicationId = "com.williamtan1989.androidinstagramclone"
-        minSdk = 26
-        targetSdk = 35
+        minSdk = libs.versions.minSdkVersion.get().toInt()
+        targetSdk = libs.versions.compileSdkVersion.get().toInt()
         versionCode = 1
         versionName = "1.0.0"
 

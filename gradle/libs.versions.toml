@@ -12,6 +12,8 @@ composeBom = "2024.10.01"
 navigationCompose = "2.8.3"
 kspVersion = "2.0.0-1.0.24"
 androidTools = "31.7.2"
+compileSdkVersion = "35"
+minSdkVersion = "26"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }

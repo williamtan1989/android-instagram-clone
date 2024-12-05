@@ -8,7 +8,6 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
-import org.gradle.kotlin.dsl.getByType
 import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
@@ -23,7 +22,7 @@ class AndroidLibraryPlugin : Plugin<Project> {
 
             extensions.configure<LibraryExtension> {
                 configureKotlinAndroid(this)
-                defaultConfig.targetSdk = 35
+                defaultConfig.targetSdk = libs.findVersion("compileSdkVersion").get().toString().toInt()
             }
 
             tasks.withType<KotlinJvmCompile>().configureEach {
@@ -32,17 +31,14 @@ class AndroidLibraryPlugin : Plugin<Project> {
                     freeCompilerArgs.add("-opt-in=kotlin.RequiresOptIn")
                 }
             }
-
-            val extension = extensions.getByType<LibraryExtension>()
-            configureKotlinAndroid(extension)
         }
     }
 
     private fun Project.configureKotlinAndroid(
         commonExtension: CommonExtension<*, *, *, *, *, *>
     ) {
-        commonExtension.compileSdk = 35
-        commonExtension.defaultConfig.minSdk = 26
+        commonExtension.compileSdk = libs.findVersion("compileSdkVersion").get().toString().toInt()
+        commonExtension.defaultConfig.minSdk = libs.findVersion("minSdkVersion").get().toString().toInt()
         commonExtension.defaultConfig.testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         commonExtension.compileOptions.sourceCompatibility = JavaVersion.VERSION_17
         commonExtension.compileOptions.targetCompatibility = JavaVersion.VERSION_17
