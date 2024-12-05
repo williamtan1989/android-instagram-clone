@@ -26,6 +26,7 @@
             <option value="$PROJECT_DIR$/authorization" />
             <option value="$PROJECT_DIR$/build-logic" />
             <option value="$PROJECT_DIR$/build-logic/convention" />
+            <option value="$PROJECT_DIR$/common-ui" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />

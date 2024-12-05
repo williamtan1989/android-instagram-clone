@@ -53,6 +53,11 @@ tasks {
 
 gradlePlugin {
     plugins {
+        register("androidCommonLibrary") {
+            id = "com.williamtan1989.androidinstagramclone.androidcommonlibrary"
+            implementationClass = "com.williamtan1989.androidinstagramclone.AndroidCommonLibraryPlugin"
+        }
+        
         register("androidLibrary") {
             id = "com.williamtan1989.androidinstagramclone.androidlibrary"
             implementationClass = "com.williamtan1989.androidinstagramclone.AndroidLibraryPlugin"

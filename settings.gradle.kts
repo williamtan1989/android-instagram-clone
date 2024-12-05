@@ -20,4 +20,5 @@ rootProject.name = "AndroidInstagramClone"
 include(
     ":app",
     ":authorization",
+    ":common-ui"
 )

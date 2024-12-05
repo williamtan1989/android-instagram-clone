@@ -42,6 +42,7 @@ android {
 
 dependencies {
     implementation(project(":authorization"))
+    implementation(project(":common-ui"))
 
     // android dependencies
     implementation(libs.androidx.core.ktx)
