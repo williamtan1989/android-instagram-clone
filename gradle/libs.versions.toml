@@ -14,6 +14,7 @@ kspVersion = "2.0.0-1.0.24"
 androidTools = "31.7.2"
 compileSdkVersion = "35"
 minSdkVersion = "26"
+coilVersion = "3.0.4"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -42,6 +43,10 @@ compose-gradlePlugin = { module = "org.jetbrains.kotlin:compose-compiler-gradle-
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "kspVersion" }
 #room-gradlePlugin = { group = "androidx.room", name = "room-gradle-plugin", version.ref = "room" }
+
+# Coil dependencies
+coil-compose = { group = "io.coil-kt.coil3", name = "coil-compose", version.ref = "coilVersion" }
+coil-network-okhttp = { group = "io.coil-kt.coil3", name = "coil-network-okhttp", version.ref = "coilVersion" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

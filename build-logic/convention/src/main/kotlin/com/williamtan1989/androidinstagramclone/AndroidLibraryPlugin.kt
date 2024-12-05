@@ -46,8 +46,8 @@ class AndroidLibraryPlugin : Plugin<Project> {
         commonExtension.resourcePrefix = path.split("""\W""".toRegex()).drop(1).distinct().joinToString(separator = "_").lowercase() + "_"
 
         dependencies {
+            // androidx dependecies
             val composeBom = libs.findLibrary("androidx-compose-bom").get()
-
             add("implementation", libs.findLibrary("androidx-core-ktx").get())
             add("implementation", libs.findLibrary("androidx-lifecycle-runtime-ktx").get())
             add("implementation", libs.findLibrary("androidx-activity-compose").get())
@@ -57,8 +57,13 @@ class AndroidLibraryPlugin : Plugin<Project> {
             add("implementation", libs.findLibrary("androidx-ui-tooling.preview").get())
             add("implementation", libs.findLibrary("androidx-material3").get())
             add("implementation", libs.findLibrary("androidx-navigation-compose").get())
-            add("implementation", libs.findLibrary("kotlinx.serialization-json").get())
+            add("implementation", libs.findLibrary("kotlinx-serialization-json").get())
 
+            // coil dependencies
+            add("implementation", libs.findLibrary("coil-compose").get())
+            add("implementation", libs.findLibrary("coil-network-okhttp").get())
+
+            // test dependencies
             add("testImplementation", libs.findLibrary("junit").get())
 
             add("androidTestImplementation", libs.findLibrary("androidx-junit").get())
