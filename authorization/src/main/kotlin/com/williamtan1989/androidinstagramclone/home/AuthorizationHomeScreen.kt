@@ -15,6 +15,7 @@ import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -29,8 +30,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-import coil3.compose.AsyncImage
+import com.williamtan1989.androidinstagramclone.common.SnapventImage
+import com.williamtan1989.androidinstagramclone.theme.snapventColors
+import com.williamtan1989.androidinstagramclone.theme.snapventTypography
 import java.time.Instant
 
 @Composable
@@ -59,12 +61,13 @@ fun AuthorizationHomeScreen(
                         Text(
                             modifier = Modifier,
                             text = "Snapvent",
-                            fontSize = 40.sp,
+                            style = MaterialTheme.snapventTypography.title40,
+                            color = MaterialTheme.snapventColors.primaryTextColor,
                         )
 
                         Spacer(Modifier.height(40.dp))
 
-                        AsyncImage(
+                        SnapventImage(
                             modifier = Modifier
                                 .size(85.dp)
                                 .clip(CircleShape),
@@ -114,15 +117,19 @@ fun AuthorizationHomeScreen(
                             .align(Alignment.Center)
                             .padding(16.dp),
                         text = buildAnnotatedString {
-                            withStyle(SpanStyle(
-                                color = Color.Gray,
-                            )) {
-                            append("Don't have an account? ")
-                                }
+                            withStyle(
+                                SpanStyle(
+                                    color = Color.Gray,
+                                )
+                            ) {
+                                append("Don't have an account? ")
+                            }
 
-                            withStyle(SpanStyle(
-                                fontWeight = FontWeight.Bold,
-                            )) {
+                            withStyle(
+                                SpanStyle(
+                                    fontWeight = FontWeight.Bold,
+                                )
+                            ) {
                                 append("Sign up.")
                             }
                         },
