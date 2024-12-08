@@ -10,18 +10,23 @@ import androidx.compose.ui.graphics.Color
 @Immutable
 data class SnapventColors(
     val primaryTextColor: Color = Color.Unspecified,
+    val accentColor: Color = Color.Unspecified,
 )
 
-val LightPrimaryTextColor = Color(0x00000000)
+val LightPrimaryTextColor = Color(0xFF000000)
+val LightAccentColor = Color(0xFF93C572)
 
-val DarkPrimaryTextColor = Color(0XFFFFFFFF)
+val DarkPrimaryTextColor = Color(0xFFFFFFFF)
+val DarkAccentColor = Color(0xFF4A7A3A)
 
 val LightSnapventColors = SnapventColors(
     primaryTextColor = LightPrimaryTextColor,
+    accentColor = LightAccentColor,
 )
 
 val DarkSnapventColors = SnapventColors(
     primaryTextColor = DarkPrimaryTextColor,
+    accentColor = DarkAccentColor,
 )
 
 val LocalSnapventColors = staticCompositionLocalOf { SnapventColors() }

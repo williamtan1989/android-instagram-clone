@@ -3,6 +3,7 @@ package com.williamtan1989.androidinstagramclone.theme
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Typography
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
@@ -29,10 +30,11 @@ fun SnapventTheme(
     }
 
     val snapventColors = if (darkTheme) DarkSnapventColors else LightSnapventColors
+    val snapventTypography = SnapventTypography(snapventColors, Typography())
 
     CompositionLocalProvider(
         LocalSnapventColors provides snapventColors,
-        LocalSnapventTypography provides MaterialTheme.snapventTypography,
+        LocalSnapventTypography provides snapventTypography,
     ) {
         MaterialTheme(
             colorScheme = colorScheme,

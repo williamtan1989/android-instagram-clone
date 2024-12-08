@@ -31,6 +31,7 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.williamtan1989.androidinstagramclone.common.SnapventImage
+import com.williamtan1989.androidinstagramclone.theme.SnapventTheme
 import com.williamtan1989.androidinstagramclone.theme.snapventColors
 import com.williamtan1989.androidinstagramclone.theme.snapventTypography
 import java.time.Instant
@@ -62,7 +63,6 @@ fun AuthorizationHomeScreen(
                             modifier = Modifier,
                             text = "Snapvent",
                             style = MaterialTheme.snapventTypography.title40,
-                            color = MaterialTheme.snapventColors.primaryTextColor,
                         )
 
                         Spacer(Modifier.height(40.dp))
@@ -78,7 +78,7 @@ fun AuthorizationHomeScreen(
 
                         Text(
                             text = "snapvent_0",
-                            fontWeight = FontWeight.SemiBold,
+                            style = MaterialTheme.snapventTypography.bodySemibold14,
                         )
 
                         Button(
@@ -86,14 +86,14 @@ fun AuthorizationHomeScreen(
                                 .padding(horizontal = 16.dp)
                                 .fillMaxWidth(),
                             colors = ButtonDefaults.buttonColors().copy(
-                                containerColor = Color(0xFF93C572),
-                                contentColor = Color.White,
+                                containerColor = MaterialTheme.snapventColors.accentColor,
                             ),
                             onClick = {},
                         ) {
                             Text(
                                 text = "Log in",
-                                fontWeight = FontWeight.SemiBold,
+                                style = MaterialTheme.snapventTypography.bodySemibold14,
+                                color = Color.White,
                             )
                         }
 
@@ -101,8 +101,8 @@ fun AuthorizationHomeScreen(
 
                         Text(
                             text = "Switch accounts",
-                            color = Color(0xFF93C572),
-                            fontWeight = FontWeight.SemiBold,
+                            color = MaterialTheme.snapventColors.accentColor,
+                            style = MaterialTheme.snapventTypography.bodySemibold14,
                         )
                     }
                 }
@@ -143,5 +143,7 @@ fun AuthorizationHomeScreen(
 @Composable
 @Preview
 private fun AuthorizationHomeScreenPreview() {
-    AuthorizationHomeScreen()
+    SnapventTheme {
+        AuthorizationHomeScreen()
+    }
 }
