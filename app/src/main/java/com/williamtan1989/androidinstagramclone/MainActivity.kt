@@ -12,6 +12,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.williamtan1989.androidinstagramclone.home.AuthorizationHomeScreen
+import com.williamtan1989.androidinstagramclone.home.login.LoginScreen
 import com.williamtan1989.androidinstagramclone.theme.SnapventTheme
 import kotlinx.serialization.Serializable
 
@@ -24,9 +25,24 @@ class MainActivity : ComponentActivity() {
             val navController = rememberNavController()
 
             SnapventTheme {
-                NavHost(navController = navController, startDestination = Screen.AuthorizationHome) {
+                NavHost(
+                    navController = navController,
+                    startDestination = Screen.AuthorizationHome
+                ) {
                     composable<Screen.AuthorizationHome> {
-                        AuthorizationHomeScreen()
+                        AuthorizationHomeScreen(
+                            onNavigateToLogin = {
+                                navController.navigate(Screen.Login)
+                            },
+                        )
+                    }
+
+                    composable<Screen.Login> {
+                        LoginScreen(
+                            onNavigateBack = {
+                                navController.popBackStack()
+                            },
+                        )
                     }
                 }
             }
@@ -36,7 +52,10 @@ class MainActivity : ComponentActivity() {
 
 sealed class Screen {
     @Serializable
-    data object AuthorizationHome: Screen()
+    data object AuthorizationHome : Screen()
+
+    @Serializable
+    data object Login : Screen()
 }
 
 @Composable

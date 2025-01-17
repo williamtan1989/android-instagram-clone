@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material3.Button
@@ -18,6 +19,7 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -34,14 +36,15 @@ import com.williamtan1989.androidinstagramclone.common.SnapventImage
 import com.williamtan1989.androidinstagramclone.theme.SnapventTheme
 import com.williamtan1989.androidinstagramclone.theme.snapventColors
 import com.williamtan1989.androidinstagramclone.theme.snapventTypography
-import java.time.Instant
 
 @Composable
 fun AuthorizationHomeScreen(
+    onNavigateToLogin: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Scaffold(
         modifier = modifier,
+        containerColor = MaterialTheme.snapventColors.primaryContainerColor,
     ) { innerPadding ->
         Box(
             modifier = Modifier.padding(innerPadding)
@@ -62,7 +65,7 @@ fun AuthorizationHomeScreen(
                         Text(
                             modifier = Modifier,
                             text = "Snapvent",
-                            style = MaterialTheme.snapventTypography.title40,
+                            style = MaterialTheme.snapventTypography.normal40,
                         )
 
                         Spacer(Modifier.height(40.dp))
@@ -71,14 +74,14 @@ fun AuthorizationHomeScreen(
                             modifier = Modifier
                                 .size(85.dp)
                                 .clip(CircleShape),
-                            model = "https://picsum.photos/170?random-time=${Instant.now().epochSecond}",
+                            model = "https://picsum.photos/170",
                             placeholder = rememberVectorPainter(Icons.Default.AccountCircle),
                             contentDescription = "Currently logged in user profile picture",
                         )
 
                         Text(
                             text = "snapvent_0",
-                            style = MaterialTheme.snapventTypography.bodySemibold14,
+                            style = MaterialTheme.snapventTypography.semibold14,
                         )
 
                         Button(
@@ -88,22 +91,27 @@ fun AuthorizationHomeScreen(
                             colors = ButtonDefaults.buttonColors().copy(
                                 containerColor = MaterialTheme.snapventColors.accentColor,
                             ),
+                            shape = RoundedCornerShape(5.dp),
                             onClick = {},
                         ) {
                             Text(
                                 text = "Log in",
-                                style = MaterialTheme.snapventTypography.bodySemibold14,
+                                style = MaterialTheme.snapventTypography.semibold14,
                                 color = Color.White,
                             )
                         }
 
                         Spacer(modifier = Modifier.height(18.dp))
 
-                        Text(
-                            text = "Switch accounts",
-                            color = MaterialTheme.snapventColors.accentColor,
-                            style = MaterialTheme.snapventTypography.bodySemibold14,
-                        )
+                        TextButton(
+                            onClick = onNavigateToLogin,
+                        ) {
+                            Text(
+                                text = "Switch accounts",
+                                color = MaterialTheme.snapventColors.accentColor,
+                                style = MaterialTheme.snapventTypography.semibold14,
+                            )
+                        }
                     }
                 }
 
@@ -144,6 +152,8 @@ fun AuthorizationHomeScreen(
 @Preview
 private fun AuthorizationHomeScreenPreview() {
     SnapventTheme {
-        AuthorizationHomeScreen()
+        AuthorizationHomeScreen(
+            onNavigateToLogin = {},
+        )
     }
 }

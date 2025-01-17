@@ -15,14 +15,14 @@ class SnapventTypography(
     private val snapventColors: SnapventColors,
     defaultTypography: Typography,
 ) {
-    val title40: TextStyle
+    val normal40: TextStyle
         @Composable
         get() = TextStyle.Default.copy(
             fontSize = 40.sp,
             color = snapventColors.primaryTextColor,
         )
 
-    val bodyBold16: TextStyle
+    val bold16: TextStyle
         @Composable
         get() = TextStyle.Default.copy(
             fontSize = 16.sp,
@@ -30,11 +30,27 @@ class SnapventTypography(
             color = snapventColors.primaryTextColor,
         )
 
-    val bodySemibold14: TextStyle
+    val semibold14: TextStyle
         @Composable
         get() = TextStyle.Default.copy(
             fontSize = 14.sp,
             fontWeight = FontWeight.SemiBold,
+            color = snapventColors.primaryTextColor,
+        )
+
+    val normal14: TextStyle
+        @Composable
+        get() = TextStyle.Default.copy(
+            fontSize = 14.sp,
+            fontWeight = FontWeight.Normal,
+            color = snapventColors.primaryTextColor,
+        )
+
+    val medium12: TextStyle
+        @Composable
+        get() = TextStyle.Default.copy(
+            fontSize = 12.sp,
+            fontWeight = FontWeight.Medium,
             color = snapventColors.primaryTextColor,
         )
 }
